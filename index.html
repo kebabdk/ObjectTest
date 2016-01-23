@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="UnitManagement.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Test
+
+<p id="tekstP"></p>
+<p id="tekstSi"></p>
+
+<script>
+    var uP = new UnitPressure(10.0,PressurePa);
+    var uV = new UnitVolume(10.0,VolumeL);
+    var un = new UnitMolar(10.0,MolarMol);
+    var uR = new UnitGasconstant(10.0,GasconstantJKmol);
+    var uT = new UnitTemperature(10.0,TemperatureC);
+
+    var formelLetter = uP.formelLetter + " &times " + uV.formelLetter
+                + " = " +  un.formelLetter + " &times " + uR.formelLetter
+                + " &times " + uT.formelLetter;
+    document.getElementById("tekstP").innerHTML = formelLetter;
+    var formelSi = uP.GetSiString() + " &times " + uV.GetSiString()
+            + " = " +  un.GetSiString() + " &times " + uR.GetSiString()
+            + " &times " + uT.GetSiString();
+    document.getElementById("tekstSi").innerHTML = formelSi;
+
+</script>
+</body>
+</html>
