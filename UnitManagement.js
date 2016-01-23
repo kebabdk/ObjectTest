@@ -81,9 +81,9 @@ UnitPressure.prototype.GetSiString = function()
 UnitPressure.prototype.GetInputString = function()
 {
     switch (this.unitInput){
-        case TemperatureC:
+        case PressureAtm:
             return this.valueInput + " atm";
-        case TemperatureK:
+        case PressurePa:
             return this.GetSiString();
     }
     return "";
